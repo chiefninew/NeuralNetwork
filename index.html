@@ -5,9 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://unpkg.com/brain.js" defer></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js"
+    integrity="sha512-mz0EI+Ay1uIJP7rZEX8C/JlTAcHRIQ8Sny4vxmmj8MSzDJgG9NxxY2pUmOGv1lO7imFIFMyjjCzEXEywNgaUdQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  defer></script>
   <script src="script.js" defer></script>
+  <style>
+    #color {
+      width: 200px;
+      height: 200px;
+      border: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #white {
+      color: white
+    }
+  </style>
 </head>
 <body>
+  <h3>Guess what text color should be base on the background color</h3>
   <div id="diagram"></div>
+  <div id="color">
+    <div id="white">White Text</div>
+    <div>Black Text</div>
+    <div id="guess">Guess Text</div>
+  </div>
+  <button id="random-btn" onclick="setRandomColor()">Test</button>
+  <button id="white-btn" onclick="chooseColor(1)">White</button>
+  <button id="black-btn" onclick="chooseColor(0)">Black</button>
+  <button id="save-btn" onclick="onSave()">Train</button>
 </body>
 </html>
