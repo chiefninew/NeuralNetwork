@@ -60,8 +60,10 @@ function setRandomColor() {
     b: Math.random(),
   };
   const guess = network.run(color)[0];
-  guessElem.style.color = guess > 0.5 ? '#FFF' : '#000';
+  const guesColor = guess > 0.5 ? 'white' : 'black';
+  guessElem.style.color = guesColor
   colorElem.style.backgroundColor = `rgba(${color.r * 255}, ${color.g * 255}, ${color.b * 255})`;
+  guessElem.innerHTML = `Text color should be ${guesColor}.`;
 }
 
 function chooseColor(value) {
@@ -82,4 +84,5 @@ function onSave() {
       console.log('ERROR WRITING', err);
     }
   });
+  setRandomColor();
 }
